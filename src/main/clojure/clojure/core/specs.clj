@@ -1,5 +1,5 @@
-(ns ^{:skip-wiki true} clojure.core.specs
-  (:require [clojure.spec :as s]))
+(ns ^{:skip-wiki true} clojure.core.specs.alpha
+  (:require [clojure.spec.alpha :as s]))
 
 ;;;; destructure
 
