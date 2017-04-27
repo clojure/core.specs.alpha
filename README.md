@@ -12,14 +12,14 @@ Latest stable release: none
 
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
-    [org.clojure/core.specs.alpha "TBD"]
+    [org.clojure/core.specs.alpha "0.1.10"]
 
 [Maven](http://maven.apache.org/) dependency information:
 
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>core.specs.alpha</artifactId>
-      <version>TBD</version>
+      <version>0.1.10</version>
     </dependency>
 
 Developer Information
