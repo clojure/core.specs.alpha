@@ -116,12 +116,16 @@
 (s/def ::prefix-list
   (s/spec
     (s/cat :prefix simple-symbol?
-           :suffix (s/* (s/alt :lib simple-symbol? :prefix-list ::prefix-list))
-           :refer (s/keys* :opt-un [::as ::refer]))))
+           :libspecs (s/+ ::libspec))))
+
+(s/def ::libspec
+  (s/alt :lib simple-symbol?
+         :lib+opts (s/spec (s/cat :lib simple-symbol?
+                                  :options (s/keys* :opt-un [::as ::refer])))))
 
 (s/def ::ns-require
   (s/spec (s/cat :clause #{:require}
-                 :libs (s/* (s/alt :lib simple-symbol?
+                 :body (s/+ (s/alt :libspec ::libspec
                                    :prefix-list ::prefix-list
                                    :flag #{:reload :reload-all :verbose})))))
 
@@ -200,11 +204,14 @@
               :load ::ns-load
               :gen-class ::ns-gen-class)))
 
+(s/def ::ns-form
+  (s/cat :name simple-symbol?
+         :docstring (s/? string?)
+         :attr-map (s/? map?)
+         :clauses ::ns-clauses))
+
 (s/fdef clojure.core/ns
-  :args (s/cat :name simple-symbol?
-               :docstring (s/? string?)
-               :attr-map (s/? map?)
-               :clauses ::ns-clauses))
+  :args ::ns-form)
 
 (defmacro ^:private quotable
   "Returns a spec that accepts both the spec and a (quote ...) form of the spec"
