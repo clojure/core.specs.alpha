@@ -7,10 +7,10 @@
   <description>Specs for clojure.core</description>
 
   <scm>
-    <connection>scm:git:git://github.com/clojure/core.spec.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/clojure/core.spec.git</developerConnection>
+    <connection>scm:git:git://github.com/clojure/core.specs.alpha.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/clojure/core.specs.alpha.git</developerConnection>
     <tag>HEAD</tag>
-    <url>https://github.com/clojure/core.spec</url>
+    <url>https://github.com/clojure/core.specs.alpha</url>
   </scm>
 
   <licenses>
@@ -29,8 +29,8 @@
 
   <developers>
     <developer>
-      <id>richhickey</id>
-      <name>Rich Hickey</name>
+      <id>puredanger</id>
+      <name>Alex Miller</name>
       <url>http://clojure.org</url>
     </developer>
   </developers>
@@ -42,8 +42,15 @@
   <dependencies>
     <dependency>
       <groupId>org.clojure</groupId>
+      <artifactId>clojure</artifactId>
+      <version>${clojure.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.clojure</groupId>
       <artifactId>spec.alpha</artifactId>
-      <version>0.1.94</version>
+      <version>0.1.123</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 
