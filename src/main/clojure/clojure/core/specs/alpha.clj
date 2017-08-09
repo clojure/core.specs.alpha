@@ -148,17 +148,23 @@
                  :lib simple-symbol?
                  :filters ::filters)))
 
+;; same as ::prefix-list, but with ::use-libspec instead
 (s/def ::use-prefix-list
   (s/spec
     (s/cat :prefix simple-symbol?
-           :suffix (s/* (s/alt :lib simple-symbol? :prefix-list ::use-prefix-list))
-           :filters ::filters)))
+           :libspecs (s/+ ::use-libspec))))
+
+;; same as ::libspec, but also supports the ::filters options in the libspec
+(s/def ::use-libspec
+  (s/alt :lib simple-symbol?
+         :lib+opts (s/spec (s/cat :lib simple-symbol?
+                                  :options (s/keys* :opt-un [::as ::refer ::exclude ::only ::rename])))))
 
 (s/def ::ns-use
   (s/spec (s/cat :clause #{:use}
-            :libs (s/* (s/alt :lib simple-symbol?
-                              :prefix-list ::use-prefix-list
-                              :flag #{:reload :reload-all :verbose})))))
+                 :libs (s/+ (s/alt :libspec ::use-libspec
+                                   :prefix-list ::use-prefix-list
+                                   :flag #{:reload :reload-all :verbose})))))
 
 (s/def ::ns-load
   (s/spec (s/cat :clause #{:load}
