@@ -22,14 +22,14 @@ Latest stable release: none
 
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
-    [org.clojure/core.specs.alpha "0.1.17"]
+    [org.clojure/core.specs.alpha "0.1.24"]
 
 [Maven](http://maven.apache.org/) dependency information:
 
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>core.specs.alpha</artifactId>
-      <version>0.1.17</version>
+      <version>0.1.24</version>
     </dependency>
 
 Developer Information

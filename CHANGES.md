@@ -1,5 +1,10 @@
 # Change Log for core.specs.alpha
 
+## Version 0.1.24 on Aug 10, 2017
+
+* CLJ-2220 - `use` prefix lists were incorrectly spec'ed
+* Moved clojure and spec.alpha deps to "provided" scope
+
 ## Version 0.1.17 on Aug 9, 2017
 
 * CLJ-2219 - `require` prefix lists were incorrectly spec'ed
