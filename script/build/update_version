@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-set -e
-
-mvn versions:set -DnewVersion=`script/build/revision`-SNAPSHOT
