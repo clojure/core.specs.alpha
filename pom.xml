@@ -36,7 +36,7 @@
   </developers>
 
   <properties>
-    <clojure.version>1.9.0-RC2</clojure.version>
+    <clojure.version>1.9.0</clojure.version>
   </properties>
 
   <dependencies>
@@ -44,12 +44,6 @@
       <groupId>org.clojure</groupId>
       <artifactId>clojure</artifactId>
       <version>${clojure.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.clojure</groupId>
-      <artifactId>spec.alpha</artifactId>
-      <version>0.1.123</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
