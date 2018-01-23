@@ -181,7 +181,7 @@
 (s/def ::method (s/and vector?
                   (s/cat :name simple-symbol?
                          :param-types ::signature
-                         :return-type simple-symbol?)))
+                         :return-type ::class-ident)))
 (s/def ::methods (s/coll-of ::method :kind vector?))
 (s/def ::main boolean?)
 (s/def ::factory simple-symbol?)
