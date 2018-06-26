@@ -1,5 +1,10 @@
 # Change Log for core.specs.alpha
 
+## Version next
+
+* CLJ-2186: Map bindings should be `:kind map?`
+* CLJ-2314: allow string array hinting in genclass return type
+
 ## Version 0.1.24 on Aug 10, 2017
 
 * CLJ-2220 - `use` prefix lists were incorrectly spec'ed
