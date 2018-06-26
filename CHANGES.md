@@ -1,6 +1,6 @@
 # Change Log for core.specs.alpha
 
-## Version next
+## Version 0.2.36 on June 26, 2018
 
 * CLJ-2186: Map bindings should be `:kind map?`
 * CLJ-2314: allow string array hinting in genclass return type
