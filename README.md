@@ -22,7 +22,7 @@ Latest stable release: none
 
 [deps.edn](https://clojure.org/guides/deps_and_cli) dependency information:
 
-    org.clojure/spec.alpha {:mvn/version "0.2.36"}
+    org.clojure/core.specs.alpha {:mvn/version "0.2.36"}
 
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
