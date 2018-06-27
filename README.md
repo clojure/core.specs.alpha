@@ -3,7 +3,7 @@ core.specs.alpha
 
 core.specs.alpha is a Clojure library containining specs to describe Clojure core macros and functions.
 
-Clojure 1.9 (still in alpha releases) depends on this library and provides it to users of Clojure. Thus, the recommended way to use this library is to add a dependency on the latest version of Clojure 1.9, rather than including it directly. In some cases, this library may release more frequently than Clojure. In those cases, you can explictly include the latest version of this library with the dependency info below.
+Clojure 1.9+ depends on this library and provides it to users of Clojure. Thus, the recommended way to use this library is to add a dependency on the latest version of Clojure 1.9+, rather than including it directly. In some cases, this library may release more frequently than Clojure. In those cases, you can explictly include the latest version of this library with the dependency info below.
 
 For more information:
 
