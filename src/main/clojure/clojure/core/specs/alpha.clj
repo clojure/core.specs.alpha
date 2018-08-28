@@ -6,17 +6,17 @@
 (s/def ::local-name (s/and simple-symbol? #(not= '& %)))
 
 (s/def ::binding-form
-  (s/or :sym ::local-name
-        :seq ::seq-binding-form
-        :map ::map-binding-form))
+  (s/or :local-symbol ::local-name
+        :seq-destructure ::seq-binding-form
+        :map-destructure ::map-binding-form))
 
 ;; sequential destructuring
 
 (s/def ::seq-binding-form
   (s/and vector?
-         (s/cat :elems (s/* ::binding-form)
-                :rest (s/? (s/cat :amp #{'&} :form ::binding-form))
-                :as (s/? (s/cat :as #{:as} :sym ::local-name)))))
+         (s/cat :forms (s/* ::binding-form)
+                :rest-forms (s/? (s/cat :ampersand #{'&} :form ::binding-form))
+                :as-form (s/? (s/cat :as #{:as} :as-sym ::local-name)))))
 
 ;; map destructuring
 
@@ -37,16 +37,21 @@
     (s/coll-of simple-symbol? :kind vector?)))
 
 (s/def ::map-bindings
-  (s/every (s/or :mb ::map-binding
-                 :nsk ::ns-keys
-                 :msb (s/tuple #{:as :or :keys :syms :strs} any?)) :kind map?))
+  (s/every (s/or :map-binding ::map-binding
+                 :qualified-keys-or-syms ::ns-keys
+                 :special-binding (s/tuple #{:as :or :keys :syms :strs} any?)) :kind map?))
 
 (s/def ::map-binding-form (s/merge ::map-bindings ::map-special-binding))
 
 ;; bindings
 
-(s/def ::binding (s/cat :binding ::binding-form :init-expr any?))
-(s/def ::bindings (s/and vector? (s/* ::binding)))
+(defn even-number-of-forms?
+  "Returns true if there are an even number of forms in a binding vector"
+  [forms]
+  (even? (count forms)))
+
+(s/def ::binding (s/cat :form ::binding-form :init-expr any?))
+(s/def ::bindings (s/and vector? even-number-of-forms? (s/* ::binding)))
 
 ;; let, if-let, when-let
 
@@ -65,25 +70,25 @@
 
 ;; defn, defn-, fn
 
-(s/def ::arg-list
+(s/def ::param-list
   (s/and
     vector?
-    (s/cat :args (s/* ::binding-form)
-           :varargs (s/? (s/cat :amp #{'&} :form ::binding-form)))))
+    (s/cat :params (s/* ::binding-form)
+           :var-params (s/? (s/cat :ampersand #{'&} :var-form ::binding-form)))))
 
-(s/def ::args+body
-  (s/cat :args ::arg-list
+(s/def ::params+body
+  (s/cat :params ::param-list
          :body (s/alt :prepost+body (s/cat :prepost map?
                                            :body (s/+ any?))
                       :body (s/* any?))))
 
 (s/def ::defn-args
-  (s/cat :name simple-symbol?
+  (s/cat :fn-name simple-symbol?
          :docstring (s/? string?)
          :meta (s/? map?)
-         :bs (s/alt :arity-1 ::args+body
-                    :arity-n (s/cat :bodies (s/+ (s/spec ::args+body))
-                                    :attr (s/? map?)))))
+         :fn-tail (s/alt :arity-1 ::params+body
+                         :arity-n (s/cat :bodies (s/+ (s/spec ::params+body))
+                                         :attr-map (s/? map?)))))
 
 (s/fdef clojure.core/defn
   :args ::defn-args
@@ -94,9 +99,9 @@
   :ret any?)
 
 (s/fdef clojure.core/fn
-  :args (s/cat :name (s/? simple-symbol?)
-               :bs (s/alt :arity-1 ::args+body
-                          :arity-n (s/+ (s/spec ::args+body))))
+  :args (s/cat :fn-name (s/? simple-symbol?)
+               :fn-tail (s/alt :arity-1 ::params+body
+                               :arity-n (s/+ (s/spec ::params+body))))
   :ret any?)
 
 ;;;; ns
@@ -108,7 +113,7 @@
 
 (s/def ::ns-refer-clojure
   (s/spec (s/cat :clause #{:refer-clojure}
-                 :filters ::filters)))
+                 :refer-filters ::filters)))
 
 (s/def ::refer (s/or :all #{:all}
                      :syms (s/coll-of simple-symbol?)))
@@ -132,7 +137,7 @@
 (s/def ::package-list
   (s/spec
     (s/cat :package simple-symbol?
-           :classes (s/* simple-symbol?))))
+           :classes (s/+ simple-symbol?))))
 
 (s/def ::import-list
   (s/* (s/alt :class simple-symbol?
@@ -146,7 +151,7 @@
 (s/def ::ns-refer
   (s/spec (s/cat :clause #{:refer}
                  :lib simple-symbol?
-                 :filters ::filters)))
+                 :refer-filters ::filters)))
 
 ;; same as ::prefix-list, but with ::use-libspec instead
 (s/def ::use-prefix-list
@@ -179,7 +184,7 @@
 (s/def ::constructors (s/map-of ::signature ::signature))
 (s/def ::post-init symbol?)
 (s/def ::method (s/and vector?
-                  (s/cat :name simple-symbol?
+                  (s/cat :method-name simple-symbol?
                          :param-types ::signature
                          :return-type ::class-ident)))
 (s/def ::methods (s/coll-of ::method :kind vector?))
@@ -211,10 +216,10 @@
               :gen-class ::ns-gen-class)))
 
 (s/def ::ns-form
-  (s/cat :name simple-symbol?
+  (s/cat :ns-name simple-symbol?
          :docstring (s/? string?)
          :attr-map (s/? map?)
-         :clauses ::ns-clauses))
+         :ns-clauses ::ns-clauses))
 
 (s/fdef clojure.core/ns
   :args ::ns-form)
