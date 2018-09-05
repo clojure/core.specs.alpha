@@ -22,18 +22,18 @@ Latest stable release: none
 
 [deps.edn](https://clojure.org/guides/deps_and_cli) dependency information:
 
-    org.clojure/core.specs.alpha {:mvn/version "0.2.36"}
+    org.clojure/core.specs.alpha {:mvn/version "0.2.44"}
 
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
-    [org.clojure/core.specs.alpha "0.2.36"]
+    [org.clojure/core.specs.alpha "0.2.44"]
 
 [Maven](http://maven.apache.org/) dependency information:
 
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>core.specs.alpha</artifactId>
-      <version>0.2.36</version>
+      <version>0.2.44</version>
     </dependency>
 
 Developer Information

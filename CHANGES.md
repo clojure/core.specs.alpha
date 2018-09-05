@@ -1,6 +1,6 @@
 # Change Log for core.specs.alpha
 
-## Version next on Sept 4, 2018
+## Version 0.2.44 on Sept 4, 2018
 
 * CLJ-2395: improve path names and predicate names in core specs
 
