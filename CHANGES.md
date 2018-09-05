@@ -1,5 +1,9 @@
 # Change Log for core.specs.alpha
 
+## Version next on Sept 4, 2018
+
+* CLJ-2395: improve path names and predicate names in core specs
+
 ## Version 0.2.36 on June 26, 2018
 
 * CLJ-2186: Map bindings should be `:kind map?`
