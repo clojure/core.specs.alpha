@@ -5,6 +5,8 @@ core.specs.alpha is a Clojure library containining specs to describe Clojure cor
 
 Clojure 1.9+ depends on this library and provides it to users of Clojure. Thus, the recommended way to use this library is to add a dependency on the latest version of Clojure 1.9+, rather than including it directly. In some cases, this library may release more frequently than Clojure. In those cases, you can explictly include the latest version of this library with the dependency info below.
 
+NOTE: This library is alpha and subject to breaking changes. At a future point, there will be a non-alpha stable version of these specs.
+
 For more information:
 
 * Spec rationale - https://clojure.org/about/spec
