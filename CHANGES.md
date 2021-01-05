@@ -1,6 +1,6 @@
 # Change Log for core.specs.alpha
 
-## next
+## Version 0.2.56 on Jan 5, 2021
 
 * Bump Clojure dependency to 1.10.1
 
