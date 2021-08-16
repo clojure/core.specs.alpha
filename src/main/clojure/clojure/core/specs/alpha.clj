@@ -123,10 +123,12 @@
     (s/cat :prefix simple-symbol?
            :libspecs (s/+ ::libspec))))
 
+(s/def ::as-alias simple-symbol?)
+
 (s/def ::libspec
   (s/alt :lib simple-symbol?
          :lib+opts (s/spec (s/cat :lib simple-symbol?
-                                  :options (s/keys* :opt-un [::as ::refer])))))
+                                  :options (s/keys* :opt-un [::as ::refer ::as-alias])))))
 
 (s/def ::ns-require
   (s/spec (s/cat :clause #{:require}
