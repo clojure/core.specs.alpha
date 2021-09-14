@@ -1,5 +1,9 @@
 # Change Log for core.specs.alpha
 
+## Version 0.2.62 on Sep 14, 2021
+
+* CLJ-2123: add support for new :as-alias in require, coming in Clojure 1.11
+
 ## Version 0.2.56 on Jan 5, 2021
 
 * Bump Clojure dependency to 1.10.1
