@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>nil - core.specs.alpha 0.1.25-SNAPSHOT API documentation</title>
+    <title>clojure.core.specs.alpha - core.specs.alpha 0.2.63-SNAPSHOT API documentation</title>
     <link rel="icon" href="static/favicon.png" />
     <link rel="shortcut icon" href="static/favicon.png" />
     <link rel="stylesheet" href="static/clojure.css" type="text/css" media="all" />
@@ -25,7 +25,7 @@ namespace.
       <div id="leftcolumn"><div style="text-align: center;"></div>
 <div class="menu">
   <div class="WikiCustomNav WikiElement wiki">
-    <span class="toc-header"><span id="project-name">core.specs.alpha</span> <span id="version">0.1.25-SNAPSHOT</span> API</span><br />
+    <span class="toc-header"><span id="project-name">core.specs.alpha</span> <span id="version">0.2.63-SNAPSHOT</span> API</span><br />
     <ul>
       <li><a href="index.html" class="wiki_link">Overview</a></li>
       <li><a href="api-index.html" class="wiki_link">API Index</a></li>
@@ -52,22 +52,205 @@ namespace.
     <a style="margin-top: 3px;" href="#"></a>
     
   </div><div class="toc-section" style="margin-left: 1em;">
-    <a style="margin-top: 3px;" href="#"></a>
-    
+    <a style="margin-top: 3px;" href="#var-section">Vars and Functions</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#clojure.core.specs.alpha/even-number-of-forms?" class="toc-entry-anchor">even-number-of-forms?</a>
+      
+    </div>
   </div><div class="toc-section" style="margin-left: 1em;">
-    <a style="margin-top: 3px;" href="#"></a>
-    
+    <a style="margin-top: 3px;" href="#spec-section">Specs</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/as" class="toc-entry-anchor">::as</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/as-alias" class="toc-entry-anchor">::as-alias</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/binding" class="toc-entry-anchor">::binding</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/binding-form" class="toc-entry-anchor">::binding-form</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/bindings" class="toc-entry-anchor">::bindings</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/class-ident" class="toc-entry-anchor">::class-ident</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/constructors" class="toc-entry-anchor">::constructors</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/defn-args" class="toc-entry-anchor">::defn-args</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/exclude" class="toc-entry-anchor">::exclude</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/expose" class="toc-entry-anchor">::expose</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/exposes" class="toc-entry-anchor">::exposes</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/extends" class="toc-entry-anchor">::extends</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/factory" class="toc-entry-anchor">::factory</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/filters" class="toc-entry-anchor">::filters</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/get" class="toc-entry-anchor">::get</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/impl-ns" class="toc-entry-anchor">::impl-ns</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/implements" class="toc-entry-anchor">::implements</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/import-list" class="toc-entry-anchor">::import-list</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/init" class="toc-entry-anchor">::init</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/keys" class="toc-entry-anchor">::keys</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/libspec" class="toc-entry-anchor">::libspec</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/load-impl-ns" class="toc-entry-anchor">::load-impl-ns</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/local-name" class="toc-entry-anchor">::local-name</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/main" class="toc-entry-anchor">::main</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/map-binding" class="toc-entry-anchor">::map-binding</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/map-binding-form" class="toc-entry-anchor">::map-binding-form</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/map-bindings" class="toc-entry-anchor">::map-bindings</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/map-special-binding" class="toc-entry-anchor">::map-special-binding</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/method" class="toc-entry-anchor">::method</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/methods" class="toc-entry-anchor">::methods</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/name" class="toc-entry-anchor">::name</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/ns-clauses" class="toc-entry-anchor">::ns-clauses</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/ns-form" class="toc-entry-anchor">::ns-form</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/ns-gen-class" class="toc-entry-anchor">::ns-gen-class</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/ns-import" class="toc-entry-anchor">::ns-import</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/ns-keys" class="toc-entry-anchor">::ns-keys</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/ns-load" class="toc-entry-anchor">::ns-load</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/ns-refer" class="toc-entry-anchor">::ns-refer</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/ns-refer-clojure" class="toc-entry-anchor">::ns-refer-clojure</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/ns-require" class="toc-entry-anchor">::ns-require</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/ns-use" class="toc-entry-anchor">::ns-use</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/only" class="toc-entry-anchor">::only</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/or" class="toc-entry-anchor">::or</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/package-list" class="toc-entry-anchor">::package-list</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/param-list" class="toc-entry-anchor">::param-list</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/params+body" class="toc-entry-anchor">::params+body</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/post-init" class="toc-entry-anchor">::post-init</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/prefix" class="toc-entry-anchor">::prefix</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/prefix-list" class="toc-entry-anchor">::prefix-list</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/quotable-import-list" class="toc-entry-anchor">::quotable-import-list</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/refer" class="toc-entry-anchor">::refer</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/rename" class="toc-entry-anchor">::rename</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/seq-binding-form" class="toc-entry-anchor">::seq-binding-form</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/set" class="toc-entry-anchor">::set</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/signature" class="toc-entry-anchor">::signature</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/state" class="toc-entry-anchor">::state</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/strs" class="toc-entry-anchor">::strs</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/syms" class="toc-entry-anchor">::syms</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/use-libspec" class="toc-entry-anchor">::use-libspec</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#:clojure.core.specs.alpha/use-prefix-list" class="toc-entry-anchor">::use-prefix-list</a>
+      
+    </div>
   </div>
 </div>
 </div>
-                <div id="content-tag"><h1 id="overview">API for <span id=""></span>
-  - <span id="header-project">core.specs.alpha</span> <span id="header-version">0.1.25-SNAPSHOT</span><span id="header-status-block"> (<span id="header-status">in development</span>)</span>
+                <div id="content-tag"><h1 id="overview">API for <span id="clojure.core.specs.alpha">clojure.core.specs.alpha</span>
+  - <span id="header-project">core.specs.alpha</span> <span id="header-version">0.2.63-SNAPSHOT</span><span id="header-status-block"> (<span id="header-status">in development</span>)</span>
   </h1>
 
-<br />Full namespace name: <span id="long-name"></span>
+<br />Full namespace name: <span id="long-name">clojure.core.specs.alpha</span>
 <p></p>
 <h2>Overview</h2>
-
+<div id="home-page">Project home page is <a href="https://github.com/clojure/core.specs.alpha/">https://github.com/clojure/core.specs.alpha/</a></div>
 <pre id="namespace-docstr"></pre>
 
 
@@ -75,8 +258,484 @@ namespace.
 
 
 
-
-
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="clojure.core.specs.alpha/even-number-of-forms?">even-number-of-forms?</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (even-number-of-forms? forms)
+</pre>
+    <pre id="var-docstr">Returns true if there are an even number of forms in a binding vector</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    <a id="var-source" href="https://github.com/clojure/core.specs.alpha/blob/4d99c8e951f62b769cd45c67d87e8b35d972236a/src/main/clojure/clojure/core/specs/alpha.clj#L48">Source</a>
+  </div>
+</div>
+<div id="spec-section">
+  <p></p>
+  <h2>Specs</h2>
+  <div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/as">::as</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(and simple-symbol? (not= '&amp; %))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/as-alias">::as-alias</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">simple-symbol?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/binding">::binding</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat :form ::binding-form :init-expr any?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/binding-form">::binding-form</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(or
+ :local-symbol ::local-name
+ :seq-destructure ::seq-binding-form
+ :map-destructure ::map-binding-form)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/bindings">::bindings</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(and vector? even-number-of-forms? (* ::binding))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/class-ident">::class-ident</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(or :class simple-symbol? :class-name string?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/constructors">::constructors</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(map-of ::signature ::signature)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/defn-args">::defn-args</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat
+ :fn-name simple-symbol?
+ :docstring (? string?)
+ :meta (? map?)
+ :fn-tail (alt
+           :arity-1 ::params+body
+           :arity-n (cat
+                     :bodies (+ (spec ::params+body))
+                     :attr-map (? map?))))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/exclude">::exclude</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(coll-of simple-symbol?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/expose">::expose</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(keys :opt-un [::get ::set])</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/exposes">::exposes</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(map-of simple-symbol? ::expose)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/extends">::extends</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">simple-symbol?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/factory">::factory</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">simple-symbol?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/filters">::filters</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(&amp;
+  (* (cat :clojure.spec.alpha/k keyword? :clojure.spec.alpha/v any?))
+  :clojure.spec.alpha/kvs-&gt;map
+  mspec__2540__auto__)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/get">::get</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">simple-symbol?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/impl-ns">::impl-ns</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">simple-symbol?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/implements">::implements</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(coll-of simple-symbol? :kind vector?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/import-list">::import-list</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(* (alt :class simple-symbol? :package-list ::package-list))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/init">::init</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">symbol?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/keys">::keys</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(coll-of ident? :kind vector?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/libspec">::libspec</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(alt
+ :lib simple-symbol?
+ :lib+opts (spec
+             (cat
+              :lib simple-symbol?
+              :options (keys* :opt-un [::as ::refer ::as-alias]))))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/load-impl-ns">::load-impl-ns</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">boolean?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/local-name">::local-name</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(and simple-symbol? (not= '&amp; %))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/main">::main</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">boolean?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/map-binding">::map-binding</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(tuple ::binding-form any?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/map-binding-form">::map-binding-form</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(merge ::map-bindings ::map-special-binding)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/map-bindings">::map-bindings</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(every
+  (or
+   :map-binding ::map-binding
+   :qualified-keys-or-syms ::ns-keys
+   :special-binding (tuple #{:as :or :syms :keys :strs} any?))
+  :kind
+  map?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/map-special-binding">::map-special-binding</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(keys :opt-un [::as ::or ::keys ::syms ::strs])</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/method">::method</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(and
+  vector?
+  (cat
+   :method-name simple-symbol?
+   :param-types ::signature
+   :return-type ::class-ident))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/methods">::methods</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(coll-of ::method :kind vector?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/name">::name</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">simple-symbol?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/ns-clauses">::ns-clauses</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(*
+  (alt
+   :refer-clojure ::ns-refer-clojure
+   :require ::ns-require
+   :import ::ns-import
+   :use ::ns-use
+   :refer ::ns-refer
+   :load ::ns-load
+   :gen-class ::ns-gen-class))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/ns-form">::ns-form</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat
+ :ns-name simple-symbol?
+ :docstring (? string?)
+ :attr-map (? map?)
+ :ns-clauses ::ns-clauses)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/ns-gen-class">::ns-gen-class</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat
+ :clause #{:gen-class}
+ :options (keys*
+            :opt-un
+            [::name
+             ::extends
+             ::implements
+             ::init
+             ::constructors
+             ::post-init
+             ::methods
+             ::main
+             ::factory
+             ::state
+             ::exposes
+             ::prefix
+             ::impl-ns
+             ::load-impl-ns]))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/ns-import">::ns-import</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat :clause #{:import} :classes ::import-list)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/ns-keys">::ns-keys</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(tuple
+  (and qualified-keyword? #(-&gt; % name #{"syms" "keys"}))
+  (coll-of simple-symbol? :kind vector?))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/ns-load">::ns-load</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat :clause #{:load} :libs (* string?))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/ns-refer">::ns-refer</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat :clause #{:refer} :lib simple-symbol? :refer-filters ::filters)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/ns-refer-clojure">::ns-refer-clojure</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat :clause #{:refer-clojure} :refer-filters ::filters)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/ns-require">::ns-require</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat
+ :clause #{:require}
+ :body (+
+         (alt
+          :libspec ::libspec
+          :prefix-list ::prefix-list
+          :flag #{:verbose :reload :reload-all})))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/ns-use">::ns-use</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat
+ :clause #{:use}
+ :libs (+
+         (alt
+          :libspec ::use-libspec
+          :prefix-list ::use-prefix-list
+          :flag #{:verbose :reload :reload-all})))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/only">::only</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(coll-of simple-symbol?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/or">::or</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(map-of simple-symbol? any?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/package-list">::package-list</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat :package simple-symbol? :classes (+ simple-symbol?))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/param-list">::param-list</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(and
+  vector?
+  (cat
+   :params (* ::binding-form)
+   :var-params (? (cat :ampersand #{'&amp;} :var-form ::binding-form))))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/params+body">::params+body</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat
+ :params ::param-list
+ :body (alt
+        :prepost+body (cat :prepost map? :body (+ any?))
+        :body (* any?)))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/post-init">::post-init</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">symbol?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/prefix">::prefix</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">string?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/prefix-list">::prefix-list</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat :prefix simple-symbol? :libspecs (+ ::libspec))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/quotable-import-list">::quotable-import-list</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(*
+  (alt
+   :class (quotable simple-symbol?)
+   :package-list (quotable ::package-list)))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/refer">::refer</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(or :all #{:all} :syms (coll-of simple-symbol?))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/rename">::rename</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(map-of simple-symbol? simple-symbol?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/seq-binding-form">::seq-binding-form</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(and
+  vector?
+  (cat
+   :forms (* ::binding-form)
+   :rest-forms (? (cat :ampersand #{'&amp;} :form ::binding-form))
+   :as-form (? (cat :as #{:as} :as-sym ::local-name))))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/set">::set</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">simple-symbol?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/signature">::signature</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(coll-of ::class-ident :kind vector?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/state">::state</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">simple-symbol?</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/strs">::strs</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(coll-of simple-symbol? :kind vector?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/syms">::syms</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(coll-of symbol? :kind vector?)</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/use-libspec">::use-libspec</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(alt
+ :lib simple-symbol?
+ :lib+opts (spec
+             (cat
+              :lib simple-symbol?
+              :options (keys*
+                         :opt-un
+                         [::as ::refer ::exclude ::only ::rename]))))</pre>
+  </div><div id="spec-entry">
+    <br />
+    <hr />
+    <h2 id=":clojure.core.specs.alpha/use-prefix-list">::use-prefix-list</h2>
+    <span id="spec-type">spec</span><br />
+    <pre id="spec-description">(cat :prefix simple-symbol? :libspecs (+ ::use-libspec))</pre>
+  </div>
+</div>
 
 </div>
               </div>
@@ -84,7 +743,7 @@ namespace.
           </div>
 	</div>
 	<div id="foot">
-	  <div id="copyright" style="text-align: center;">Copyright 2007-2017 by Rich Hickey and the various contributors</div>
+	  <div id="copyright" style="text-align: center;">Copyright 2007-2022 by Rich Hickey and the various contributors</div>
 	</div>
       </div>
       <div id="DesignedBy">Logo &amp; site design by <a href="http://www.tomhickey.com" title="Visit Tom Hickey's website.">Tom Hickey</a>.<br />
