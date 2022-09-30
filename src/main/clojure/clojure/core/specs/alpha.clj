@@ -1,4 +1,4 @@
-(ns ^{:skip-wiki true} clojure.core.specs.alpha
+(ns clojure.core.specs.alpha
   (:require [clojure.spec.alpha :as s]))
 
 ;;;; destructure
