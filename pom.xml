@@ -16,7 +16,7 @@
   <licenses>
     <license>
       <name>Eclipse Public License 1.0</name>
-      <url>http://opensource.org/licenses/eclipse-1.0.php</url>
+      <url>https://opensource.org/license/epl-1-0/</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
@@ -24,19 +24,19 @@
   <parent>
     <groupId>org.clojure</groupId>
     <artifactId>pom.contrib</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
   </parent>
 
   <developers>
     <developer>
       <id>puredanger</id>
       <name>Alex Miller</name>
-      <url>http://clojure.org</url>
+      <url>https://clojure.org</url>
     </developer>
   </developers>
 
   <properties>
-    <clojure.version>1.10.1</clojure.version>
+    <clojure.version>1.11.1</clojure.version>
   </properties>
 
   <dependencies>
