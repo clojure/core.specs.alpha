@@ -1,6 +1,6 @@
 # Change Log for core.specs.alpha
 
-## Version next on May 10, 2024
+## Version 0.4.74 on May 10, 2024
 
 * Bump Clojure dependency to 1.11.3
 
