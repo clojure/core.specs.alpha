@@ -134,7 +134,7 @@
   (s/spec (s/cat :clause #{:require}
                  :body (s/+ (s/alt :libspec ::libspec
                                    :prefix-list ::prefix-list
-                                   :flag #{:reload :reload-all :verbose})))))
+                                   :flag #{:reload :reload-all :verbose :when-providing-macros})))))
 
 (s/def ::package-list
   (s/spec
@@ -171,7 +171,7 @@
   (s/spec (s/cat :clause #{:use}
                  :libs (s/+ (s/alt :libspec ::use-libspec
                                    :prefix-list ::use-prefix-list
-                                   :flag #{:reload :reload-all :verbose})))))
+                                   :flag #{:reload :reload-all :verbose :when-providing-macros})))))
 
 (s/def ::ns-load
   (s/spec (s/cat :clause #{:load}
