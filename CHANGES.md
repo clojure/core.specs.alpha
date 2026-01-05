@@ -1,5 +1,9 @@
 # Change Log for core.specs.alpha
 
+## Version  on Jan 5, 2026
+
+* Bump Clojure dependency to 1.12.4 and parent pom to 1.4.0
+
 ## Version 0.4.74 on May 10, 2024
 
 * Bump Clojure dependency to 1.11.3
