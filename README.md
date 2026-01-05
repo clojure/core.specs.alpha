@@ -16,25 +16,25 @@ For more information:
 Releases and Dependency Information
 ========================================
 
-Latest stable release: 0.4.74
+Latest stable release: 0.5.81
 
 * [All Released Versions](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.clojure%22%20AND%20a%3A%22core.specs.alpha%22)
 * [Development Snapshot Versions](https://oss.sonatype.org/index.html#nexus-search;gav~org.clojure~core.specs.alpha~~~)
 
 [deps.edn](https://clojure.org/guides/deps_and_cli) dependency information:
 
-    org.clojure/core.specs.alpha {:mvn/version "0.4.74"}
+    org.clojure/core.specs.alpha {:mvn/version "0.5.81"}
 
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
-    [org.clojure/core.specs.alpha "0.4.74"]
+    [org.clojure/core.specs.alpha "0.5.81"]
 
 [Maven](https://maven.apache.org/) dependency information:
 
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>core.specs.alpha</artifactId>
-      <version>0.4.74</version>
+      <version>0.5.81</version>
     </dependency>
 
 Developer Information
