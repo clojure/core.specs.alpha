@@ -1,5 +1,9 @@
 # Change Log for core.specs.alpha
 
+## Version 0.6.87-alpha1 on Jun 29, 2026
+
+* CLJ-2096: Updated destructuring specs to support checked keys
+
 ## Version 0.5.81 on Jan 5, 2026
 
 * Bump Clojure dependency to 1.12.4 and parent pom to 1.4.0
