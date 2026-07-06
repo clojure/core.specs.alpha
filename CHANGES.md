@@ -1,5 +1,9 @@
 # Change Log for core.specs.alpha
 
+## Version 0.6.92-alpha2 on Jul 6, 2026
+
+* CLJ-2963: Update specs for :select in destructuring
+
 ## Version 0.6.87-alpha1 on Jun 29, 2026
 
 * CLJ-2096: Updated destructuring specs to support checked keys
