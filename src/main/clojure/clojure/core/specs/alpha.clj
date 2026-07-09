@@ -31,7 +31,11 @@
 (s/def ::keys! ::keys-form)
 (s/def ::syms! ::syms-form)
 (s/def ::strs! ::strs-form)
-(s/def ::or (s/map-of simple-symbol? any?))
+(s/def ::or
+  (s/every (s/or
+             :binding (s/tuple ::local-name any?)
+             :as (s/tuple #{:as} ::local-name))
+    :kind map?))
 (s/def ::as ::local-name)
 (s/def ::select ::local-name)
 
