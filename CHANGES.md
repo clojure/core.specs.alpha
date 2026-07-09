@@ -1,5 +1,9 @@
 # Change Log for core.specs.alpha
 
+## Version 0.6.97-alpha3 on Jul 9, 2026
+
+* CLJ-2966: Update specs for :as in :or
+
 ## Version 0.6.92-alpha2 on Jul 6, 2026
 
 * CLJ-2963: Update specs for :select in destructuring
