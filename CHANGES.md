@@ -1,5 +1,10 @@
 # Change Log for core.specs.alpha
 
+## Version 0.6.103-alpha4 on Jul 9, 2026
+
+* CLJ-2966: Reverted specs for :as in :or
+* CLJ-2966: Add specs for :defaults in map destructuring
+
 ## Version 0.6.97-alpha3 on Jul 9, 2026
 
 * CLJ-2966: Update specs for :as in :or
