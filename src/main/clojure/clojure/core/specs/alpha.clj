@@ -31,12 +31,13 @@
 (s/def ::keys! ::keys-form)
 (s/def ::syms! ::syms-form)
 (s/def ::strs! ::strs-form)
-(s/def ::or (s/map-of simple-symbol? any?))
+(s/def ::or (s/map-of ::local-name any?))
 (s/def ::as ::local-name)
+(s/def ::defaults ::local-name)
 (s/def ::select ::local-name)
 
 (s/def ::map-special-binding
-  (s/keys :opt-un [::as ::or ::keys ::syms ::strs ::keys! ::syms! ::strs! ::select]))
+  (s/keys :opt-un [::as ::or ::keys ::syms ::strs ::keys! ::syms! ::strs! ::select ::defaults]))
 
 (s/def ::map-binding (s/tuple ::binding-form any?))
 
@@ -48,7 +49,7 @@
 (s/def ::map-bindings
   (s/every (s/or :map-binding ::map-binding
                  :qualified-keys-or-syms ::ns-keys
-                 :special-binding (s/tuple #{:as :or :keys :syms :strs :keys! :syms! :strs! :select} any?))
+                 :special-binding (s/tuple #{:as :or :keys :syms :strs :keys! :syms! :strs! :select :defaults} any?))
     :kind map?))
 
 (s/def ::map-binding-form (s/merge ::map-bindings ::map-special-binding))
