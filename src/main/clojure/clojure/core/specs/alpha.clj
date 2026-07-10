@@ -31,7 +31,7 @@
 (s/def ::keys! ::keys-form)
 (s/def ::syms! ::syms-form)
 (s/def ::strs! ::strs-form)
-(s/def ::or (s/map-of ::local-name any?))
+(s/def ::or map?)
 (s/def ::as ::local-name)
 (s/def ::defaults ::local-name)
 (s/def ::select ::local-name)
