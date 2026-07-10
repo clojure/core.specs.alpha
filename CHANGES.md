@@ -1,5 +1,9 @@
 # Change Log for core.specs.alpha
 
+## Version: 0.6.108-alpha5 on Jul 10, 2026
+
+* Expand non-binding elements in destructuring to allow any key
+
 ## Version 0.6.103-alpha4 on Jul 9, 2026
 
 * CLJ-2966: Reverted specs for :as in :or
