@@ -1,5 +1,9 @@
 # Change Log for core.specs.alpha
 
+## Version: 0.6.113-alpha6 on Jul 10, 2026
+
+* Relax :or binding key constraints
+
 ## Version: 0.6.108-alpha5 on Jul 10, 2026
 
 * Expand non-binding elements in destructuring to allow any key
