@@ -20,7 +20,7 @@
 
 ;; map destructuring
 
-(s/def ::non-binding-elements (s/cat :ampersand #{'&} ::non-binding-element (s/+ ident?)))
+(s/def ::non-binding-elements (s/cat :ampersand #{'&} ::non-binding-element (s/+ any?)))
 (s/def ::keys-form (s/and vector? (s/cat :bindings (s/* ident?) :nonbinding (s/? ::non-binding-elements))))
 (s/def ::syms-form (s/and vector? (s/cat :bindings (s/* symbol?) :nonbinding (s/? ::non-binding-elements))))
 (s/def ::strs-form (s/and vector? (s/cat :bindings (s/* simple-symbol?) :nonbinding (s/? ::non-binding-elements))))
