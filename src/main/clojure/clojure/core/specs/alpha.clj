@@ -23,14 +23,14 @@
 (s/def ::non-binding-elements (s/cat :ampersand #{'&} ::non-binding-element (s/+ any?)))
 (s/def ::keys-form (s/and vector? (s/cat :bindings (s/* ident?) :nonbinding (s/? ::non-binding-elements))))
 (s/def ::syms-form (s/and vector? (s/cat :bindings (s/* symbol?) :nonbinding (s/? ::non-binding-elements))))
-(s/def ::strs-form (s/and vector? (s/cat :bindings (s/* simple-symbol?) :nonbinding (s/? ::non-binding-elements))))
+(s/def ::simple-syms-form (s/and vector? (s/cat :bindings (s/* simple-symbol?) :nonbinding (s/? ::non-binding-elements))))
 
 (s/def ::keys ::keys-form)
 (s/def ::syms ::syms-form)
-(s/def ::strs ::strs-form)
+(s/def ::strs ::simple-syms-form)
 (s/def ::keys! ::keys-form)
 (s/def ::syms! ::syms-form)
-(s/def ::strs! ::strs-form)
+(s/def ::strs! ::simple-syms-form)
 (s/def ::or map?)
 (s/def ::as ::local-name)
 (s/def ::defaults ::local-name)
@@ -44,7 +44,7 @@
 (s/def ::ns-keys
   (s/tuple
     (s/and qualified-keyword? #(-> % name #{"keys" "syms" "keys!" "syms!"}))
-    ::syms-form))
+    ::simple-syms-form))
 
 (s/def ::map-bindings
   (s/every (s/or :map-binding ::map-binding
