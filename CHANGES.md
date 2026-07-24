@@ -1,5 +1,13 @@
 # Change Log for core.specs.alpha
 
+## Version: 0.6.122-alpha8 on Jul 24, 2026
+
+* Add spec for :all directive in associative destructuring
+
+## Version: 0.6.118-alpha7 on Jul 21, 2026
+
+* CLJ-2968 Fix regression in allowed bindings in qualified keys or syms from CLJ-2960
+
 ## Version: 0.6.113-alpha6 on Jul 10, 2026
 
 * Relax :or binding key constraints
