@@ -1,6 +1,6 @@
 # Change Log for core.specs.alpha
 
-## Version: next on Sep 3, 2026
+## Version: 0.6.127-alpha9 on Sep 3, 2026
 
 * Add spec for :excess directive in associative destructuring
 
