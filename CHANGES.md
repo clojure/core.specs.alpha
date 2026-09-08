@@ -1,6 +1,6 @@
 # Change Log for core.specs.alpha
 
-## Version: 0.6.127-alpha9 on Sep 3, 2026
+## Version: 0.6.133-alpha10 on Sep 8, 2026
 
 * Add spec for :missing directive in associative destructuring
 
