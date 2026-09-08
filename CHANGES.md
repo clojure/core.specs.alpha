@@ -2,6 +2,10 @@
 
 ## Version: 0.6.127-alpha9 on Sep 3, 2026
 
+* Add spec for :missing directive in associative destructuring
+
+## Version: 0.6.127-alpha9 on Sep 3, 2026
+
 * Add spec for :excess directive in associative destructuring
 
 ## Version: 0.6.122-alpha8 on Jul 24, 2026
