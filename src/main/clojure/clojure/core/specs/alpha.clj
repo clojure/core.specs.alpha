@@ -24,6 +24,9 @@
 (s/def ::keys-form (s/and vector? (s/cat :bindings (s/* ident?) :nonbinding (s/? ::non-binding-elements))))
 (s/def ::syms-form (s/and vector? (s/cat :bindings (s/* symbol?) :nonbinding (s/? ::non-binding-elements))))
 (s/def ::simple-syms-form (s/and vector? (s/cat :bindings (s/* simple-symbol?) :nonbinding (s/? ::non-binding-elements))))
+(s/def ::req-bindings (s/every (s/or :map-binding ::map-binding-form
+                                     :local-binding (s/tuple ::local-name any?))
+                        :kind map?))
 
 (s/def ::keys ::keys-form)
 (s/def ::syms ::syms-form)
@@ -31,6 +34,7 @@
 (s/def ::keys! ::keys-form)
 (s/def ::syms! ::syms-form)
 (s/def ::strs! ::simple-syms-form)
+(s/def ::req! ::req-bindings)
 (s/def ::or map?)
 (s/def ::as ::local-name)
 (s/def ::select ::local-name)
@@ -39,7 +43,7 @@
 (s/def ::all ::local-name)
 
 (s/def ::map-special-binding
-  (s/keys :opt-un [::as ::or ::keys ::syms ::strs ::keys! ::syms! ::strs! ::select ::excess ::missing ::all]))
+  (s/keys :opt-un [::as ::or ::keys ::syms ::strs ::keys! ::syms! ::strs! ::req! ::select ::excess ::missing ::all]))
 
 (s/def ::map-binding (s/tuple ::binding-form any?))
 
@@ -51,7 +55,7 @@
 (s/def ::map-bindings
   (s/every (s/or :map-binding ::map-binding
                  :qualified-keys-or-syms ::ns-keys
-                 :special-binding (s/tuple #{:as :or :keys :syms :strs :keys! :syms! :strs! :select :excess :missing :all} any?))
+                 :special-binding (s/tuple #{:as :or :keys :syms :strs :keys! :syms! :strs! :req! :select :excess :missing :all} any?))
     :kind map?))
 
 (s/def ::map-binding-form (s/merge ::map-bindings ::map-special-binding))
