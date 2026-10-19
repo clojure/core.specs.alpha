@@ -3,8 +3,26 @@ name: Test
 permissions:
   contents: read
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
-  call-test:
-    uses: clojure/build.ci/.github/workflows/test.yml@master
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest] # macOS-latest, windows-latest]
+        java-version: ["17", "21"]
+        distribution: ["temurin", "corretto"]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v6
+    - name: Set up Java
+      uses: actions/setup-java@v5
+      with:
+        java-version: ${{ matrix.java-version }}
+        distribution: ${{ matrix.distribution }}
+        cache: 'maven'
+    - name: Build with Maven
+      run: mvn -ntp -B clean test
