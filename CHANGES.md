@@ -1,5 +1,12 @@
 # Change Log for core.specs.alpha
 
+## Version: next
+
+* Remove spec for :defaults directive
+* Add spec for :req! directive
+* Update Clojure dependency to 1.12.6
+* Update build dependencies and release action to latest
+
 ## Version: 0.6.133-alpha10 on Sep 8, 2026
 
 * Add spec for :missing directive in associative destructuring
