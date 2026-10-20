@@ -1,6 +1,6 @@
 # Change Log for core.specs.alpha
 
-## Version: next
+## Version: v0.6.143-alpha11 on Oct 19, 2026
 
 * Remove spec for :defaults directive
 * Add spec for :req! directive
