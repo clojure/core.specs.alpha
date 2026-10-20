@@ -24,9 +24,8 @@
 (s/def ::keys-form (s/and vector? (s/cat :bindings (s/* ident?) :nonbinding (s/? ::non-binding-elements))))
 (s/def ::syms-form (s/and vector? (s/cat :bindings (s/* symbol?) :nonbinding (s/? ::non-binding-elements))))
 (s/def ::simple-syms-form (s/and vector? (s/cat :bindings (s/* simple-symbol?) :nonbinding (s/? ::non-binding-elements))))
-(s/def ::req-bindings (s/every (s/or :map-binding ::map-binding-form
-                                     :local-binding (s/tuple ::local-name any?))
-                        :kind map?))
+(s/def ::req-bindings (s/map-of (s/or :map-binding ::map-binding-form :local-binding ::local-name)
+                                any?))
 
 (s/def ::keys ::keys-form)
 (s/def ::syms ::syms-form)
